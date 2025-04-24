@@ -71,7 +71,7 @@ header {
     position: relative;
 }
 .Subencabezado.Direccion {
-    background-image: url('/direccion.png');
+    background-image: url('/Proyecto/direccion.png');
     background-size: 50px 50px;
     background-repeat: no-repeat;
     background-position: center;
