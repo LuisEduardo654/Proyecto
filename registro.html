@@ -1,54 +1,113 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registro</title>
-  <link rel="stylesheet" href="Estilos_registro.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="estilos_registro.css">
 </head>
 <body>
-  <form class="registro">
-    <h2>Registro</h2>
+    <form class="registro" action="registro.php" method="POST">
+        <h2>Registro de Usuario</h2>
+        
+        <!-- Sección de información personal -->
+        <div class="grupo-campos">
+            <h3 class="titulo-seccion">Información Personal</h3>
+            
+            <div class="campo-formulario">
+                <label for="nombres">Nombres</label>
+                <input type="text" id="nombres" name="nombres" required minlength="3" maxlength="30">
+            </div>
 
-    <div class="campo-formulario">
-      <label for="nombres">Nombres</label>
-      <input type="text" id="nombres" name="nombres" required>
-    </div>
+            <div class="campo-formulario">
+                <label for="apellidos">Apellidos</label>
+                <input type="text" id="apellidos" name="apellidos" required minlength="3" maxlength="30">
+            </div>
 
-    <div class="campo-formulario">
-      <label for="apellidos">Apellidos</label>
-      <input type="text" id="apellidos" name="apellidos" required>
-    </div>
+            <div class="campo-formulario">
+                <label for="fecha_nac">Fecha de nacimiento</label>
+                <input type="date" id="fecha_nac" name="fecha_nac" required>
+            </div>
 
-    <div class="campo-formulario">
-      <label for="correo">Correo electrónico</label>
-      <input type="email" id="correo" name="correo" required>
-    </div>
+            <fieldset class="campo-formulario campo-sexo">
+                <legend>Sexo</legend>
+                <div class="opciones-sexo">
+                    <label>
+                        <input type="radio" name="sexo" value="Masculino" required> 
+                        <span class="radio-personalizado"></span>
+                        Masculino
+                    </label>
+                    <label>
+                        <input type="radio" name="sexo" value="Femenino">
+                        <span class="radio-personalizado"></span>
+                        Femenino
+                    </label>
+                </div>
+            </fieldset>
+        </div>
 
-    <div class="campo-formulario">
-      <label for="usuario">Nombre de usuario</label>
-      <input type="text" id="usuario" name="usuario" required>
-    </div>
+        <!-- Sección de contacto -->
+        <div class="grupo-campos">
+            <h3 class="titulo-seccion">Información de Contacto</h3>
+            
+            <div class="campo-formulario">
+                <label for="direccion">Dirección</label>
+                <input type="text" id="direccion" name="direccion" required minlength="5" maxlength="50">
+            </div>
 
-    <div class="campo-formulario">
-      <label for="contrasena">Contraseña</label>
-      <input type="password" id="contrasena" name="contrasena" required>
-    </div>
+            <div class="campo-formulario">
+                <label for="colonia">Colonia</label>
+                <input type="text" id="colonia" name="colonia" required minlength="3" maxlength="50">
+            </div>
 
-    <div class="campo-formulario">
-      <label for="confirmar">Confirmar contraseña</label>
-      <input type="password" id="confirmar" name="confirmar" required>
-    </div>
+            <div class="campos-combinados">
+                <div class="campo-formulario">
+                    <label for="cp">Código Postal</label>
+                    <input type="number" id="cp" name="cp" required min="10000" max="99999">
+                </div>
+                <div class="campo-formulario">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}">
+                </div>
+            </div>
 
-    <button type="submit">Registrarse</button>
+            <div class="campo-formulario">
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
+        </div>
 
-    <div class="enlaces">
-      <h3><a href="/Proyecto/inicio_sesion.html">¿Ya tienes una cuenta? Inicia sesión</a></h3>
-    </div>
-    <div class="volver-inicio">
-      <a href="/Proyecto/index.html">← Volver a la página principal</a>
-  </div>
-  </form>
-  
+        <!-- Sección de cuenta -->
+        <div class="grupo-campos">
+            <h3 class="titulo-seccion">Información de la Cuenta</h3>
+            
+            <div class="campo-formulario">
+                <label for="usuario">Nombre de usuario</label>
+                <input type="text" id="usuario" name="usuario" required minlength="4" maxlength="20">
+            </div>
+
+            <div class="campos-combinados">
+                <div class="campo-formulario">
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" id="contrasena" name="contrasena" required minlength="6" maxlength="18">
+                </div>
+                <div class="campo-formulario">
+                    <label for="confirmar">Confirmar contraseña</label>
+                    <input type="password" id="confirmar" name="confirmar" required minlength="6" maxlength="18">
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="boton-principal">
+            <i class="icono-registro"></i> Registrarse
+        </button>
+
+        <div class="enlaces">
+            <a href="inicio_sesion.html">¿Ya tienes una cuenta? Inicia sesión</a>
+        </div>
+        <div class="volver-inicio">
+            <a href="index.html">← Volver a la página principal</a>
+        </div>
+    </form>
 </body>
 </html>
